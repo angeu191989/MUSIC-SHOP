@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUSIC INSTRUMENTS</title>
+  <link rel="icon" href="ICONO MUSIC SHOP.ico">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+      background: url('https://c.pxhere.com/photos/80/51/electric_electric_guitars_guitars_music_musical_instrument_musician_rock_sound-1074564.jpg!d') no-repeat center center/cover;
+      color:#1B2631 ;
+    }
+
+    header {
+      background-color:#1B2631;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color:#424949;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-cart {
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-cart input[type="text"] {
+      padding: 5px;
+      border: none;
+    }
+
+    .search-cart button {
+      padding: 5px 10px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background-color: #222;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      z-index: 1000;
+    }
+
+    nav ul ul li {
+      width: 100%;
+    }
+
+    nav ul ul li a {
+      padding: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+
+    .sidebar img {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    #cart-modal {
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 2000;
+    }
+
+    #cart-modal h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      .search-cart {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🎸.MUSIC INSTRUMENTS.🎸</h1>
+    <img src="MUSIC SHOP 3.jpg" alt="LOGO">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/TIENDA%20DE%20MUSICA.HTML">🎧.INICIO.🎧 </a></li>
+      <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/MAS%20SOBRE%20NOSOTROS.HTML">🎻.MAS SOBRE NOSOTROS.🎻 </a></li>
+      <li>
+      <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/FORMULARIO%20TIENDA%20DE%20MUSICA.HTML">🎷.FORMULARIO DE COMPRA.🎷 </a></li>
+      <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/TABLA%20LISTA%20DE%20PRODUCTOS.HTML">🎺.LISTA DE DISPONIBILIDAD.🎺 </a></li>
+      <li>
+        <a href="#">🎹.INSTRUMENTOS.🎹</a>
+        <ul>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/GUITARRA%20WEB.HTML" onclick="addToCart('Guitarra')">Guitarras</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/CLARINETE%20WEB.HTML" onclick="addToCart('Bajo')">Clarinete</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/PIANO%20WEB.HTML" onclick="addToCart('Piano')">Pianos</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/BATERIA%20WEB.HTML" onclick="addToCart('Batería')">Baterías</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/VIOLIN%20WEB.HTML" onclick="addToCart('Violín')">Violines</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/SAXOFON%20WEB.HTML" onclick="addToCart('Saxofón')">Saxofones</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/TROMPETA%20WEB.HTML" onclick="addToCart('Trompeta')">Trompetas</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/FLAUTA%20WEB.HTML" onclick="addToCart('Flauta')">Flautas</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/ARPA%20WEB.HTML" onclick="addToCart('Teclado')">Arpas</a></li>
+          <li><a href="file:///D:/EMPRESA%20TIENDA%20DE%20MUSICA/TAMBOR.HTML" onclick="addToCart('Ukelele')">Tambores</a></li>
+        </ul>
+      </li>
+    <div class="search-cart">
+      <input type="text" placeholder="Buscar...">
+      <button>Buscar</button>
+      <button onclick="toggleCart()">🛒 Carrito (<span id="cart-count">0</span>)</button>
+    </div>
+  </nav>
+
+  <div id="cart-modal">
+    <h3>Carrito de Compras</h3>
+    <ul id="cart-items"></ul>
+  </div>
+
+  <div class="container">
+    <aside class="sidebar">
+      <img src="TIENDA 1.jpg" alt="Tienda 1">
+      <img src="TIENDA 2.jpg" alt="Tienda 2">
+      <img src="TIENDA 3.jpeg" alt="Tienda 3">
+      <img src="TIENDA 4.jpeg" alt="Tienda 4">
+      <img src="TIENDA 5.jpeg" alt="TIENDA 5">
+      <img src="TIENDA 6.jpg" alt="Tienda 6">
+      <img src="TIENDA 7.jpg" alt="Tienda 7">
+      <img src="TIENDA 8.jpg" alt="Tienda 8">
+    </aside>
+
+    <section class="main-content">
+      <div class="container">
+      <aside class="sidebar">
+      <img src="GUITARRA ACUSTICA.jpg" alt="I 1">
+      <img src="GUITARRA CLASICA..jpg" alt="I 2">
+      <img src="GUITARRA ELECTRICA.jpg" alt="I 3">
+      <img src="guitarra resonadora 5.jpg" alt="I 4">
+      <img src="guitarra semiacustica.jpg" alt="I 5">
+      <img src="BANJO.jpg" alt="I 6">
+      <img src="guitarra semiacustica.jpg" alt="I 7">
+    </aside>
+    </section>
+    <section class="main-content">
+        <div class="container">
+        <aside class="sidebar">
+        <img src="PIANO DE COLA.jpg" alt="I 1">
+        <img src="PIANO DE CONCIERTO.jpg" alt="I 2">
+        <img src="PIANO DIGITAL.jpg" alt="I 3">
+        <img src="PIANO VERTICAL.jpg" alt="I 4">
+        <img src="ARPA CELTA.jpg" alt="I 5">
+        <img src="ARPA CLASICA.jpg" alt="I 6">
+        <img src="TAMBOR REDOBLANTE.jpg" alt="I 7">
+      </aside>
+      </section>
+      <section class="main-content">
+        <div class="container">
+        <aside class="sidebar">
+        <img src="SAXOFON ALTO.jpg" alt="I 1">
+        <img src="MANDOLINA.jpg" alt="I 2">
+        <img src="CLARINETE PICCOLO.jpg" alt="I 3">
+        <img src="FLAUTA ALTA.jpg" alt="Tienda 4">
+        <img src="VIOLI 7.jpg" alt="I 5">
+        <img src="IMAGEN 4.jpg" alt="I 6">
+        <img src="ARPA ANDINA.jpg" alt="Tienda 7">
+      </aside>
+      </section>
+  </div>
+
+  <footer>
+    <p>&copy;2025 MUSICAL INSTRUMENTS.-Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(item) {
+      cart.push(item);
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const cartCount = document.getElementById('cart-count');
+      const cartItems = document.getElementById('cart-items');
+      cartCount.textContent = cart.length;
+      cartItems.innerHTML = '';
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = item + ' ';
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Eliminar';
+        removeBtn.onclick = () => removeFromCart(index);
+        li.appendChild(removeBtn);
+        cartItems.appendChild(li);
+      });
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function toggleCart() {
+      const modal = document.getElementById('cart-modal');
+      modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+
+</html>
